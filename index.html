@@ -1,76 +1,408 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta
-    name="description"
-    content="Jesse Aaron's professional portfolio"
-  >
-  <title>Jesse Aaron | Portfolio</title>
-  <!-- External stylesheet -->
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Jesse Aaron's data administration and analytics portfolio.">
+  <title>Jesse Aaron | Data & Analytics</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header>
-    <div class="logo">JESSE AARON</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a
-        href="https://github.com/eronwah"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub
+
+  <header class="header" id="home">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home">
+        <span class="brand-logo">JA<span>.</span></span>
+        <span>
+          <strong>Jesse Aaron</strong>
+          <small>DATA & ANALYTICS</small>
+        </span>
       </a>
-    </nav>
-  </header>
-  <main>
-    <div class="intro" id="about">
-      <p class="eyebrow">Welcome to my portfolio</p>
-      <h1>Hello, I'm Jesse Aaron.</h1>
-      <p class="description">
-        I work with data, records, spreadsheets, and administrative
-        processes. This is the starting point for my professional
-        portfolio, where I'll share my skills, experience, and projects.
-      </p>
-      <div class="buttons">
-        <a class="button primary" href="#projects">
-          Explore My Work
-        </a>
-        <a
-          class="button secondary"
-          href="https://github.com/eronwah"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit My GitHub
-        </a>
-      </div>
+
+      <button class="menu-toggle" aria-label="Open menu"
+        aria-expanded="false" aria-controls="navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a class="nav-cta" href="#contact">Let's connect ↗</a>
+      </nav>
     </div>
-    <section id="projects">
-      <h2>Selected Projects</h2>
-      <div class="project">
-        <h3>Portfolio Website</h3>
-        <p>
-          A responsive website built with HTML and CSS,
-          hosted using GitHub Pages.
-        </p>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            DATA · OPERATIONS · CONTINUOUS LEARNING
+          </div>
+
+          <h1>Making data<br>clearer. Workflows<br><span>smarter.</span></h1>
+
+          <p class="hero-text">
+            I'm Jesse Aaron, a data administration and customer service
+            professional interested in turning operational information
+            into organized, useful insights.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">Explore my work ↗</a>
+            <a class="button secondary" href="#about">About me ↓</a>
+          </div>
+
+          <div class="hero-note">
+            Data organization <span>·</span> Reporting
+            <span>·</span> Process improvement
+          </div>
+        </div>
+
+        <!-- Illustrative dashboard graphic -->
+        <div class="dashboard reveal">
+          <div class="dash-top">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span>WORKSPACE / OVERVIEW</span>
+            <span>•••</span>
+          </div>
+
+          <div class="dash-body">
+            <div class="dash-heading">
+              <div>
+                <small>SAMPLE DASHBOARD</small>
+                <h2>Operations overview</h2>
+              </div>
+              <span class="pill">DEMO DATA</span>
+            </div>
+
+            <div class="metrics">
+              <div class="metric">
+                <span>Records reviewed</span>
+                <strong>1,284</strong>
+                <small>Illustrative figure</small>
+              </div>
+              <div class="metric">
+                <span>Data quality</span>
+                <strong>98.2%</strong>
+                <small>Illustrative figure</small>
+              </div>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-heading">
+                <div>
+                  <strong>Monthly activity</strong>
+                  <small>Example trend visualization</small>
+                </div>
+                <span class="chart-legend">● Records</span>
+              </div>
+
+              <div class="chart">
+                <div class="chart-grid">
+                  <span></span><span></span><span></span>
+                  <span></span>
+                </div>
+                <svg viewBox="0 0 360 130" preserveAspectRatio="none"
+                  role="img" aria-label="Illustrative upward trend">
+                  <defs>
+                    <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#70adff" stop-opacity=".35"/>
+                      <stop offset="100%" stop-color="#70adff" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0 105 L40 87 L80 96 L120 63 L160 75 L200 42 L240 56 L280 27 L320 39 L360 12 L360 130 L0 130 Z" fill="url(#areaFill)"/>
+                  <path d="M0 105 L40 87 L80 96 L120 63 L160 75 L200 42 L240 56 L280 27 L320 39 L360 12" fill="none" stroke="#70adff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+                </svg>
+              </div>
+
+              <div class="chart-months">
+                <span>JAN</span><span>FEB</span><span>MAR</span>
+                <span>APR</span><span>MAY</span><span>JUN</span>
+              </div>
+            </div>
+
+            <div class="dash-foot">
+              <span><i></i> Demonstration interface only</span>
+              <span>OVERVIEW / 01</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="project">
-        <h3>More Projects Coming Soon</h3>
-        <p>
-          Selected data management, spreadsheet, and automation
-          projects will be added here.
+
+      <div class="container focus-row">
+        <span>FOCUS AREAS</span>
+        <div class="focus-tags">
+          <span>Data Management</span>
+          <span>Spreadsheets</span>
+          <span>Operational Reporting</span>
+          <span>Process Improvement</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section light-section" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <span class="section-label">01 / ABOUT</span>
+          <h2>Good data starts<br>with <span>good structure.</span></h2>
+        </div>
+
+        <div class="about-copy reveal">
+          <p class="large-copy">
+            My background connects administrative data, customer operations,
+            and practical process improvement.
+          </p>
+          <p>
+            I've worked with records, spreadsheets, customer and membership
+            information, payment tracking, and operational updates. I enjoy
+            making information easier to maintain, review, and use.
+          </p>
+          <p>
+            I'm developing my analytics skills while building on my
+            hands-on experience with data organization and reporting.
+          </p>
+          <a class="text-link" href="#experience">View experience →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-label">02 / CAPABILITIES</span>
+            <h2>Tools for turning<br><span>information into insight.</span></h2>
+          </div>
+          <p>
+            A working overview of my current capabilities and technical
+            learning areas.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <div class="skill-icon">▦</div>
+            <h3>Data & spreadsheets</h3>
+            <p>Organizing records, reviewing entries, standardizing information, and maintaining structured trackers.</p>
+            <div class="tags">
+              <span>Google Sheets</span><span>Excel</span><span>Data Cleaning</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">⌁</div>
+            <h3>Reporting & tracking</h3>
+            <p>Arranging operational information to support reviews, account follow-ups, and routine reporting.</p>
+            <div class="tags">
+              <span>Operational Reports</span><span>Tracking</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">{ }</div>
+            <h3>Automation & systems</h3>
+            <p>Exploring practical ways to reduce repetitive work and improve digital workflows.</p>
+            <div class="tags">
+              <span>Google Workspace</span><span>Apps Script — learning</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">⌘</div>
+            <h3>Analytics development</h3>
+            <p>Building foundational technical skills to grow into more analytical responsibilities.</p>
+            <div class="tags">
+              <span>SQL fundamentals</span><span>Visualization — developing</span>
+            </div>
+          </article>
+        </div>
+
+        <p class="fine-print">
+          Skills are provisional. Verify proficiency and experience before publishing the final CV-based version.
         </p>
       </div>
     </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section light-section" id="experience">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-label">03 / EXPERIENCE</span>
+            <h2>Operations experience.<br><span>Data-first mindset.</span></h2>
+          </div>
+          <p>Sample experience content based on previously shared background. Dates and exact details are still to be confirmed.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-dot"></div>
+          <article class="experience-card reveal">
+            <span class="section-label">SAMPLE EXPERIENCE ENTRY</span>
+            <h3>Data Administrator & Customer Service Representative</h3>
+            <p class="company">Telecommunications Service Cooperative (Telecoop)</p>
+
+            <p class="experience-intro">
+              Supporting day-to-day operations through organized records,
+              spreadsheet-based tracking, customer information, and
+              administrative coordination.
+            </p>
+
+            <ul>
+              <li>Maintained customer, membership, sales, and payment information in spreadsheets and digital records.</li>
+              <li>Helped transition paper-based administrative processes toward Google Workspace tools and structured tracking.</li>
+              <li>Supported account-status monitoring, overdue payment tracking, and operational follow-ups.</li>
+              <li>Worked across customer service and field operations to coordinate service updates and escalated concerns.</li>
+            </ul>
+
+            <div class="tags">
+              <span>Google Workspace</span>
+              <span>Spreadsheets</span>
+              <span>Record Management</span>
+              <span>Customer Operations</span>
+            </div>
+
+            <p class="fine-print">
+              Draft only: verify the job title, employment dates, responsibilities, and achievements against your CV.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-label">04 / SELECTED PROJECTS</span>
+            <h2>Examples of how I<br><span>work with data.</span></h2>
+          </div>
+          <p>Demonstration projects to build out with sample datasets, methodology, and screenshots.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card featured reveal">
+            <div class="project-art art-blue">
+              <div class="art-label"><span>01 / REPORTING</span><span>DEMO</span></div>
+              <div class="bar-chart" aria-hidden="true">
+                <i style="height:38%"></i><i style="height:55%"></i>
+                <i style="height:47%"></i><i style="height:73%"></i>
+                <i style="height:63%"></i><i style="height:88%"></i>
+                <i style="height:70%"></i>
+              </div>
+              <div class="art-foot">Monthly activity · Illustrative only</div>
+            </div>
+            <div class="project-content">
+              <span class="project-type">DASHBOARD CONCEPT</span>
+              <h3>Operations & Revenue Tracker</h3>
+              <p>A sample reporting view for monthly activity, payment status, and key indicators using a structured dataset.</p>
+              <div class="tags"><span>Excel / Sheets</span><span>KPI Design</span><span>Reporting</span></div>
+              <button class="project-link" data-project="operations">View project brief ↗</button>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-art art-purple">
+              <div class="art-label"><span>02 / DATA QUALITY</span><span>DEMO</span></div>
+              <div class="quality-list">
+                <div><b>✓</b><span>Duplicate review<small>Identify repeated records</small></span></div>
+                <div><b>✓</b><span>Format checks<small>Standardize values</small></span></div>
+                <div><b>✓</b><span>Validation rules<small>Flag missing fields</small></span></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-type">DATA CLEANING</span>
+              <h3>Customer Records Quality Check</h3>
+              <p>A repeatable workflow for flagging duplicate rows, inconsistent formats, and missing values.</p>
+              <div class="tags"><span>Data Validation</span><span>Spreadsheets</span></div>
+              <button class="project-link" data-project="quality">View project brief ↗</button>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-art art-green">
+              <div class="art-label"><span>03 / PROCESS</span><span>DEMO</span></div>
+              <div class="flow-chart">
+                <div>Input records</div><b>↓</b>
+                <div class="flow-active">Validate & organize</div><b>↓</b>
+                <div>Ready for review</div>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-type">WORKFLOW DESIGN</span>
+              <h3>Spreadsheet Workflow Improvement</h3>
+              <p>A proposed workflow for standardizing manual tracking, validation, and review steps.</p>
+              <div class="tags"><span>Process Mapping</span><span>Google Workspace</span></div>
+              <button class="project-link" data-project="workflow">View project brief ↗</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="project-notice">
+          <span>i</span>
+          <p><strong>Portfolio note:</strong> These are proposed demonstration projects, not completed client projects. Build them with fictional data before presenting them as finished work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-panel reveal">
+        <div>
+          <span class="section-label">05 / CONTACT</span>
+          <h2>Let's make information<br><span>work harder.</span></h2>
+          <p>
+            Interested in data administration, reporting, operations,
+            or entry-level analytics opportunities? Let's connect.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <!-- Replace this placeholder with your real email before publishing. -->
+          <a class="button primary" href="mailto:your.email@example.com">Email me ↗</a>
+          <a class="button secondary" href="https://github.com/eronwah" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+          <small>Update your email and LinkedIn profile when ready.</small>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer>
-    &copy; <span id="year"></span> Jesse Aaron. All rights reserved.
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="footer-logo" href="#home">JA<span>.</span></a>
+      <p>Built with curiosity, structure, and continuous learning.</p>
+      <span>© <span id="year"></span> Jesse Aaron</span>
+    </div>
   </footer>
-  <!-- External JavaScript -->
-  <script src="script.js"></script>
+
+  <!-- Interactive project brief -->
+  <div class="modal" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+      <button class="modal-close" type="button" aria-label="Close" data-close-modal>×</button>
+      <span class="section-label" id="modal-kicker">PROJECT BRIEF</span>
+      <h2 id="modal-title">Project title</h2>
+      <p id="modal-description"></p>
+      <h3>Proposed approach</h3>
+      <ul id="modal-steps"></ul>
+      <p class="modal-note">This is a project plan. Add the finished dataset and analysis before presenting it as completed work.</p>
+    </div>
+  </div>
+
 </body>
 </html>
