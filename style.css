@@ -1,0 +1,182 @@
+/* =========================
+   Base styles
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f8f9fc;
+  color: #182230;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =========================
+   Header and navigation
+========================= */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  background: #ffffff;
+  border-bottom: 1px solid #e8ebf0;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: #344054;
+  margin-left: 22px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #2563eb;
+}
+
+/* =========================
+   Main content
+========================= */
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 90px 24px;
+}
+
+.intro {
+  max-width: 720px;
+}
+
+.eyebrow {
+  color: #2563eb;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(38px, 7vw, 68px);
+  line-height: 1.15;
+  margin: 18px 0;
+  letter-spacing: -2px;
+}
+
+.description {
+  color: #667085;
+  font-size: 18px;
+  max-width: 650px;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.secondary {
+  border: 1px solid #d0d5dd;
+  color: #182230;
+  background: #ffffff;
+}
+
+/* =========================
+   Projects
+========================= */
+
+section {
+  margin-top: 90px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.project {
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e8ebf0;
+  border-radius: 12px;
+  margin-top: 18px;
+}
+
+.project p {
+  color: #667085;
+}
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+  text-align: center;
+  padding: 28px 16px;
+  border-top: 1px solid #e8ebf0;
+  color: #667085;
+  font-size: 13px;
+}
+
+/* =========================
+   Mobile responsive styles
+========================= */
+
+@media (max-width: 600px) {
+  header {
+    padding: 18px 6%;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 14px;
+    display: inline-block;
+    padding: 5px 0;
+  }
+
+  main {
+    padding-top: 60px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
