@@ -220,8 +220,8 @@ footer{text-align:center;padding:34px 6vw;border-top:1px solid var(--line);color
    <p><b>Phone:</b> 0977 092 7233</p>
    <p><b>Location:</b> San Leonardo, Nueva Ecija, Philippines</p>
    <div class="socials">
-    <a class="soc" href="https://linkedin.com/in/eroncuartero" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.700V21h-4z"/></svg></a>
-    <a class="soc" href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.200.7-3.900-1.500-3.900-1.500-.5-1.300-1.300-1.700-1.300-1.700-1-.7.1-.7.1-.7 1.200.1 1.800 1.200 1.800 1.200 1 1.800 2.800 1.300 3.400 1 .1-.8.4-1.300.7-1.600-2.600-.3-5.300-1.300-5.300-5.700 0-1.300.5-2.300 1.200-3.100-.1-.3-.5-1.500.1-3.100 0 0 1-.3 3.200 1.200a11 11 0 0 1 5.800 0c2.200-1.500 3.200-1.200 3.200-1.200.6 1.600.2 2.800.1 3.100.8.800 1.200 1.800 1.200 3.100 0 4.400-2.700 5.400-5.300 5.700.4.400.8 1.100.8 2.200v3.200c0 .3.2.7.8.6A11.500 11.500 0 0 0 12 .5z"/></svg></a>
+    <a class="soc" href="https://www.linkedin.com/in/eroncuartero/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.700V21h-4z"/></svg></a>
+    <a class="soc" href="https://github.com/eronwah" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.200.7-3.900-1.500-3.900-1.500-.5-1.300-1.300-1.700-1.300-1.700-1-.7.1-.7.1-.7 1.200.1 1.800 1.200 1.800 1.200 1 1.800 2.800 1.300 3.400 1 .1-.8.4-1.300.7-1.600-2.600-.3-5.300-1.300-5.300-5.700 0-1.300.5-2.300 1.200-3.100-.1-.3-.5-1.500.1-3.100 0 0 1-.3 3.200 1.200a11 11 0 0 1 5.800 0c2.200-1.500 3.200-1.200 3.200-1.200.6 1.600.2 2.800.1 3.100.8.800 1.200 1.800 1.200 3.100 0 4.400-2.700 5.400-5.300 5.700.4.400.8 1.100.8 2.200v3.200c0 .3.2.7.8.6A11.500 11.500 0 0 0 12 .5z"/></svg></a>
     <a class="soc" href="mailto:eroncuartero@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.5l8 5.500 8-5.500V7zm16 3.900-8 5.500-8-5.500V17h16z"/></svg></a>
    </div>
   </div>
@@ -276,8 +276,15 @@ $$('.tab').forEach(t=>t.onclick=()=>{$$('.tab').forEach(x=>x.classList.remove('o
 /* magnetic buttons */
 $$('.mag').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px) scale(1.07)`});b.addEventListener('mouseleave',()=>b.style.transform='')});
 /* form */
-$('#form').onsubmit=e=>{e.preventDefault();const n=$('#n').value.trim(),m=$('#m').value.trim(),em=$('#e').value.trim();if(!n||!m||!/^\S+@\S+\.\S+$/.test(em)){$('#msg').style.color='#ff6b6b';$('#msg').textContent='Please complete all fields with a valid email.';return}
- $('#msg').style.color='';$('#msg').textContent='Opening your email app…';location.href=`mailto:eroncuartero@gmail.com?subject=${encodeURIComponent('Portfolio message from '+n)}&body=${encodeURIComponent(m+'\n\n'+n+' ('+em+')')}`};
+$('#form').onsubmit=async e=>{e.preventDefault();const n=$('#n').value.trim(),m=$('#m').value.trim(),em=$('#e').value.trim(),msg=$('#msg'),btn=$('#form button');
+ if(!n||!m||!/^\S+@\S+\.\S+$/.test(em)){msg.style.color='#ff6b6b';msg.textContent='Please complete all fields with a valid email.';return}
+ msg.style.color='';msg.textContent='Sending…';btn.disabled=true;
+ try{const res=await fetch('https://formsubmit.co/ajax/eroncuartero@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({name:n,email:em,message:m,_subject:'Portfolio message from '+n,_replyto:em,_template:'table',_captcha:'false'})});
+  const j=await res.json();if(!res.ok||j.success==='false')throw 0;
+  msg.textContent='Message sent! Thank you, I’ll get back to you soon.';$('#form').reset()}
+ catch(_){msg.style.color='#ff6b6b';msg.textContent='Couldn’t send directly, opening your email app instead…';
+  location.href=`mailto:eroncuartero@gmail.com?subject=${encodeURIComponent('Portfolio message from '+n)}&body=${encodeURIComponent(m+'\n\n'+n+' ('+em+')')}`}
+ btn.disabled=false};
 /* background: binary + dots */
 const cv=$('#bg'),cx=cv.getContext('2d');let W,H,P=[];
 function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=Array.from({length:Math.min(70,W/18|0)},()=>({x:Math.random()*W,y:Math.random()*H,v:.2+Math.random()*.6,c:Math.random()<.5?'0':'1',a:.15+Math.random()*.35,d:Math.random()<.4}))}
